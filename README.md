@@ -32,7 +32,7 @@ Welcome to the **Oceanside Chess Club** website repository! This project powers 
 ### Steps
 1. Clone the repository:
    ```sh
-    git clone https://github.com/Pythoript/oceanside-chess-club.git
+    git clone https://github.com/oceanside-chess/oceanside-chess-club.git
    ```
 2. Navigate to the project directory:
    ```sh
