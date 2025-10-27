@@ -327,11 +327,12 @@ p {
   }
 
   .silver .tariff__button:hover {
-    background-color: #a8a8a8;
+    background-color: var(--tariff-color-silver);
+    color: white;
   }
 
   .gold .tariff__button:hover {
-    background-color: #e6c200;
+    background-color: #ffbb00;
   }
 }
 
