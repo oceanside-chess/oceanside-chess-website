@@ -90,7 +90,7 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.tariff:has(.tariff__button.active) {
+.tariff:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
