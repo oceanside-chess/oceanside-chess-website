@@ -17,6 +17,23 @@ section {
   background-color: transparent !important;
 }
 
+.sponsor-tiers {
+  padding-block: 0 !important;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  svg:last-of-type :is(.path-0, .path-1, .path-2) {
+    transform: translateY(2px);
+  }
+}
+
 :root {
   --tariff-color-bronze: #cd7f32;
   --tariff-color-silver: #c0c0c0;
@@ -37,6 +54,8 @@ section {
 .base-template__wrapper * {
     all: initial;
     font-family: inherit !important;
+    cursor: inherit !important;
+    user-select: none !important;
 }
 
 .base-template__wrapper {
@@ -53,12 +72,13 @@ p {
   flex-wrap: wrap;
   gap: 30px;
   width: 100%;
+	padding-bottom: 4rem;
   font-family: "Poppins", sans-serif !important;
 }
 
 .tariff {
   max-width: 320px;
-  cursor: pointer;
+  cursor: pointer !important;
   position: relative;
   z-index: 1;
   overflow: hidden;
