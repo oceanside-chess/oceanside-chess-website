@@ -1,10 +1,14 @@
 @use "lib/splash";
 
+main {
+	position: relative;
+}
+
 main::before {
 	content: "";
 	position: absolute;
 	width: 100%;
-	height: 170%;
+	height: 100%;
 	opacity: 0.15;
 	background-image: url(../uploads/tournament.avif);
 	background-position: center;
@@ -15,6 +19,10 @@ main::before {
 
 section {
 	background-color: transparent !important;
+}
+
+h2 {
+	max-width: 100%;
 }
 
 .sponsor-tiers {
@@ -47,6 +55,7 @@ section {
 .intro-text {
 	font-size: 1.1rem;
 	max-width: min(54ch, 88vw);
+	text-wrap: balance;
 }
 
 .base-template__wrapper,
@@ -69,21 +78,22 @@ section {
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: 30px;
+		gap: 20px;
 		width: 100%;
 		padding-bottom: 4rem;
 		font-family: "Poppins", sans-serif !important;
 	}
 
 	.tariff {
-		max-width: 320px;
+		max-width: 300px;
+		width: auto;
 		cursor: pointer !important;
 		position: relative;
 		z-index: 1;
 		overflow: hidden;
 		padding: 34px 37px;
 		background-color: rgba(255, 255, 255, 0.85);
-		border-radius: 40px;
+		border-radius: 35px;
 		border: transparent;
 		transition: all 0.6s ease-in-out;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -92,23 +102,6 @@ section {
 	.tariff:hover {
 		transform: translateY(-10px);
 		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-	}
-
-	.tariff::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		border-radius: 32px;
-		border: 1px solid transparent;
-		background: linear-gradient(120deg,
-				rgba(255, 255, 255, 0.9),
-				rgba(240, 240, 240, 0.9)) border-box;
-		mask: linear-gradient(#fff 0, #fff 100%) padding-box,
-			linear-gradient(#fff 0, #fff 100%);
-		mask-composite: exclude;
-		mix-blend-mode: normal;
-		transition: background-color 0.6s ease-in-out;
 	}
 
 	@keyframes move-gradient {
@@ -208,6 +201,7 @@ section {
 		font-weight: 400;
 		color: rgba(0, 0, 0, 0.6);
 		max-width: 33ch;
+		text-wrap: balance;
 	}
 
 	.tariff__button {
@@ -329,42 +323,120 @@ section {
 			background-color: #ffbb00;
 		}
 	}
+}
 
-	@media (max-width: 575px) {
-		.tariffs {
-			gap: 40px;
-		}
+@media screen and (max-width:1056px) {
+	.base-template__wrapper .tariffs {
+		gap: 13px;
+	}
+}
 
-		.tariff {
-			padding: 30px;
-			border-radius: 20px;
-		}
+@media screen and (max-width:995px) {
+	.base-template__wrapper .tariff {
+		padding: 26px 22px 18px 22px;
+		border-radius: 25px;
+	}
+	.base-template__wrapper .tariff__list p {
+  		font-size: 13px;
+	}
+}
 
-		.tariff.silver {
-			order: -1;
-		}
+@media screen and (max-width:900px) {
+	.base-template__wrapper .tariff {
+		max-width: 237px;
+	}
+	.base-template__wrapper .tariffs {
+		gap: 8px;
+	}
+	.intro-text {
+		font-size: 1rem;
+	}
+}
 
-		.tariff::before {
-			border-radius: 20px;
-		}
+@media screen and (max-width:865px) {
+	.base-template__wrapper .tariff {
+		max-width: 212px;
+	}
+	.base-template__wrapper .tariff__list p {
+  		font-size: 12px;
+	}
+	.base-template__wrapper .tariff__description {
+		font-size: 0.82rem;
+	}
+	.tariff .tariff__price .tariff__number {
+  		font-size: 38px;
+	}
+}
 
-		.tariff__button {
-			padding: 10px 40px;
-			width: 100%;
-		}
+@media screen and (max-width: 791px) {
+	.base-template__wrapper .tariffs {
+		flex-direction: column;
+		gap:20px;
+	}
+	.base-template__wrapper .tariff {
+		max-width: 100%;
+		width: 60vw;
+		padding: 26px 20px 16px 20px;
+	}
+	.base-template__wrapper .tariff__list p {
+  		font-size: 15px;
+	}
+	.base-template__wrapper .tariff__description {
+		font-size: 0.88rem;
+	}
+	.tariff .tariff__price .tariff__number {
+  		font-size: 45px;
+	}
+}
 
-		.tariff__item-text {
-			font-size: 0.875rem;
-		}
+@media screen and (max-width:540px) {
+	.base-template__wrapper .tariff {
+		width: 82vw;
+		padding: 26px 20px 16px 20px;
+	}
+}
 
-		.tariff__checkbox {
-			width: 24px;
-			height: 24px;
-		}
+@media screen and (max-width:390px) {
+	.base-template__wrapper .tariffs {
+		gap: 13px;
+	}
+}
 
-		.tariff__checkbox img {
-			width: 15px;
-			height: 15px;
-		}
+@media screen and (max-width:354px) {
+	.base-template__wrapper .tariff__list p {
+  		font-size: 13px;
+	}
+	.base-template__wrapper .tariff__description {
+		font-size: 0.82rem;
+	}
+	.tariff .tariff__price .tariff__number {
+  		font-size: 38px;
+	}
+	.base-template__wrapper .tariff {
+		border-radius: 16px;
+	}
+	.container {
+		padding: 3rem 6px;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.base-template__wrapper .tariff__list p {
+  		font-size: 12px;
+	}
+	.base-template__wrapper .tariff__description {
+		font-size: 0.84rem;
+	}
+	h2 {
+		font-size: 1.8rem !important;
+	}
+	.intro-text {
+		font-size: 0.9rem;
+	}
+}
+
+@media screen and (max-width:275px) {
+	.base-template__wrapper .tariffs {
+		gap: 8px;
 	}
 }
